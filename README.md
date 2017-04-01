@@ -32,10 +32,8 @@ methods to get your current location.
 I think OpenLayers (The one that made this template possible) has its own method of comparing coordinates, you can use
 that too!
 
-A preview of this template: [click here to redirect](https://htmlpreview.github.io/?https://github.com/Shin-Aska/Web-GPS-Template/blob/master/search.html#)
-
 ##
-# Sample codes of comparing and searching geolocation
+# Sample codes for comparing and searching coordinates
 
 ```javascript
   if (typeof(geolocation.getPosition()) === "undefined" && manualmode == false) {
@@ -57,10 +55,14 @@ A preview of this template: [click here to redirect](https://htmlpreview.github.
   for (var i = 0; i < list.length; i++) {
     var icon = list[i];
     var dist = Math.sqrt(Math.pow((coords[0] - icon.x), 2) + Math.pow((coords[1] - icon.y), 2));
-    icon.dist = dist;
-    icon.action;
-    if (dist <= rLimit) {
+    
+    // If distance is close to the 2500m radius, then it is included
+    if (dist <= 2500) {
       selected.push(icon);
     }
   }
 ```
+
+## Preview
+
+A preview of this template: [click here to redirect](https://htmlpreview.github.io/?https://github.com/Shin-Aska/Web-GPS-Template/blob/master/search.html#)
