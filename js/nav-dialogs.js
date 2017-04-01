@@ -2,7 +2,7 @@ var about = function() {
 	var cont = "<center><h2>Web GPS Template</h2></center>";
 	cont += "<p>A software project aimed in helping people in need of technical assistance in creating their own hybrid gps map (This project only uses standard JavaScript libraries and functions)</p>";
 	cont += "<h5>This project made use of the following components:</h5>";
-	cont += "<ul> <li>qgis2web</li> <li>Open Layers</li> <li>Jquery with Jquery UI</li> <li>OpenStreet Maps</li> </ul> <br>";
+	cont += "<ul> <li>QGIS</li> <li>qgis2web</li> <li>Open Layers</li> <li>Jquery with Jquery UI</li> <li>OpenStreet Maps</li> <li>Font Awesome</li> <li>MerriWeather Font</li> </ul> <br>";
 	cont += "<p> Thank you for using this template and this would not be possible if it were not for the never-ending support of my friends, classmates and family. </p>";
 	cont += "<p> (This project is under the terms of MPL (Mozilla public license) and as the license dictates it can be used by other commercial products if wished without any cost or agreement. Although a public recognition is always nice :) </p>";
 	cont += "<h5>Made by: Richard Louie Orilla (<a href='mailto:Orillarichard@gmail.com'>Orillarichard@gmail.com</a>) </h5>";
