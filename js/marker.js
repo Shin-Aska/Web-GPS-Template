@@ -25,6 +25,24 @@ var roadIconStyle = new ol.style.Style({
     })
 });
 
+var speedStarStyle = new ol.style.Style({
+    image: new ol.style.Icon({
+        anchor: [0.5, 46],
+        anchorXUnits: 'fraction',
+        anchorYUnits: 'pixels',
+        opacity: 0.75,
+        src: 'assets/speedstar-marker.png'
+    }),
+    text: new ol.style.Text({
+        font: '15px Calibri,sans-serif',
+        fill: new ol.style.Fill({ color: '#fff' }),
+        stroke: new ol.style.Stroke({
+            color: '#044c27', width: 5
+        }),
+        text: 'Sample Marker 2'
+    })
+});
+
 /*
  * This method initMaps() will be called to initialize the markers
  * The geom.Point coordinates are determined from the map.onclick event
@@ -46,11 +64,24 @@ var roadIconStyle = new ol.style.Style({
 */
 
 initMaps = function() {
+	
+	// First marker
+	
 	var feature = new ol.Feature(
         new ol.geom.Point([13983527.690297138, 792050.3018172664])
     );
 	feature.setStyle(roadIconStyle);
     vectorSource.addFeature(feature);
+    
+    // Second marker
+    
+    var feature2 = new ol.Feature(
+        new ol.geom.Point([13983527.690297138, 792550.3018172664])
+    );
+	feature2.setStyle(speedStarStyle);
+    vectorSource.addFeature(feature2);
+    
+    // You can follow the pattern if u want
 
 
     iconEventsList = [
@@ -59,7 +90,16 @@ initMaps = function() {
             function: function() {
                 sampleMarkerEvent();
             }
+        },
+        
+        {
+            name: "Sample Marker 2",
+            function: function() {
+                anotherSampleMarkerEvent();
+            }
         }
+        
+        // Follow the pattern if u want
     ];
 };
 
