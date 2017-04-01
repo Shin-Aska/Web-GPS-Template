@@ -1,0 +1,46 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #f832fc;
+	width: 100%;
+	height: 99.9% !important;
+}
+
+.logo {
+	width:100px;
+	height:100px;
+}
+
+.title {
+	font-family:Merriweather UltraBold;
+	color:aliceblue;
+}
+
+.tline {
+	font-family:Merriweather;
+	font-style:italic;
+	color:#c4edf8;
+}
+
+.launchLogoContainer {
+	display: table;
+	width: 100%;
+	height: inherit;
+}
+.launchLogoContainerCell {
+	display: table-cell;
+	vertical-align: middle;
+}
+.launchLogo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100px;
+	height: 300px;
+	text-align: center;
+}

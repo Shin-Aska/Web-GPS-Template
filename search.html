@@ -1,0 +1,119 @@
+<!--
+	This is the main page of the app, this page is called search.html because
+	this template is based from a project that searches locations given a specific
+	set of keyword inside a search bar.
+	
+	But I removed it since the later version of the said app doesn't have one, however
+	the name search.html is a remnant of the said decision. It's up to you to change this one
+	but well its still compatible with Apache Cordova
+	
+	Pages to edit:
+	
+	marker.js -> holds the markers inside the map
+	nav-dialogs.js -> holds the methods used by the drawer template (side bar)
+	info.js -> holds the methods that the events used when user clicks or taps the marker inside the map
+	navigation.js -> controls the dialog box that is used by the app
+	main.css -> layout of this page
+	templates.css -> some design choices (background color) that both index.html and this page shares
+	
+	The webinterface folder is created automatically by qgis2web plug-in of qgis. If you create a new map and use the 
+	qgis2web plugin, this template is very compatible. Although I did some changes inside the qgis2web.js in order to cater
+	manual mode (setting the gps coordinate manually) so keep that in mind when changing webinterface content.
+	
+	This template doesnt search or compare coordinate locations, but you can make your own one. Just use this Javascript 
+	methods to get your current location.
+	
+	geolocation.getPosition() -> This method gives the current GPS location of the user
+	manualcoords -> Your manually set GPS coordinates. Only call this variable if manualmode is set to true
+	
+	I think OpenLayers (The one that made this template possible) has its own method of comparing coordinates, you can use
+	that too!
+-->
+<!doctype html>
+<html>
+<head>
+	<title>Web GPS Template</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="js/math.js" type="text/javascript"></script>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/switchButton.js" type="text/javascript"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/templates.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="js/jquery-ui.min.css" rel="stylesheet">
+    <link href="js/jquery-ui.structure.min.css" rel="stylesheet">
+    <link href="js/jquery-ui.theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./webinterface/target/resources/ol.css" />
+    <link rel="stylesheet" href="./webinterface/target/resources/ol3-layerswitcher.css">
+    <link rel="stylesheet" href="./webinterface/target/resources/qgis2web.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/responsitable.css">
+    <link rel="stylesheet" href="css/drawer.min.css">
+    <link rel="stylesheet" href="css/switchButton.css">
+    <link href="css/sandbox.css" rel="stylesheet">
+</head>
+
+<body class="drawer drawer--left">
+  <div class="header">
+      <div class="headerTable">
+        <div class="headerCell">
+          <p class="title">WEB GPS TEMPLATE</p>
+        </div>
+      </div>
+  </div>
+
+  <header role="banner">
+    <button type="button" class="drawer-toggle drawer-hamburger">
+      <span class="sr-only">toggle navigation</span>
+      <span class="drawer-hamburger-icon"></span>
+    </button>
+
+    <nav class="drawer-nav" role="navigation">
+      <ul class="drawer-menu">
+        <li><a class="drawer-brand">🛰️ GPS Template</a></li>
+        <li><a class="drawer-menu-item" href="#" onclick="settings()">Settings</a></li>
+        <li><a class="drawer-menu-item" href="#" onclick="about()">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="map" class="map">
+      <div id="popup" class="ol-popup">
+          <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+          <div id="popup-content"></div>
+      </div>
+  </div>
+  <script src="webinterface/target/resources/polyfills.js"></script>
+  <script src="./webinterface/target/resources/ol.js"></script>
+  <script src="./webinterface/target/resources/ol3-layerswitcher.js"></script>
+  <script src="./webinterface/target/layers/layers.js" type="text/javascript"></script> 
+  <script src="./webinterface/target/resources/qgis2web.js"></script>
+  <script src="./webinterface/target/resources/Autolinker.min.js"></script>
+
+
+  <div class="window" id="closeArea" title="List of [targets]">
+    <div id="content"></div>
+  </div>
+
+
+  <script src="js/marker.js" type="text/javascript"></script>
+  <script src="js/navigation.js" type="text/javascript"></script>
+  <script src="js/info.js" type="text/javascript"></script>
+  <script src="js/nav-dialogs.js" type="text/javascript"></script>
+  <script src="js/iscroll.js"></script>
+  <script src="js/drawer.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.drawer').drawer();
+    });
+  </script>
+
+</body>
+</html>

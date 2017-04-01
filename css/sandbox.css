@@ -1,0 +1,31 @@
+body {
+  font-family: 'Avenir Next', 'Helvetica Neue', sans-serif;
+  margin: 0;
+}
+
+.item {
+  height: 2000px;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
+  color: #fff;
+}
+
+.drawer-brand {
+  border-bottom: 2px solid black;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.drawer-brand:hover {
+
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.drawer-menu > li:hover {
+  text-decoration: none;
+  cursor: pointer;
+}

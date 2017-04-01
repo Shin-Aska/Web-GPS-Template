@@ -1,0 +1,81 @@
+.divTable{
+  display: table;
+  width: 100%;
+}
+.divTableRow {
+  display: table-row;
+}
+.divTableHeading {
+  background-color: #397dfd;
+  display: table-header-group;
+  color: white;
+  font-weight: bold;
+}
+
+.divTableCell, .divTableHead {
+  border: 1px solid #999999;
+  display: table-cell;
+  padding: 3px 10px;
+  text-align: center;
+  vertical-align: top;
+}
+
+
+.hrClass {
+  border: 1px solid black;
+}
+
+.divTableFoot {
+  background-color: #EEE;
+  display: table-footer-group;
+  font-weight: bold;
+}
+.divTableBody {
+  display: table-row-group;
+}
+
+@media screen and (max-width: 700px) {
+  .divTableCell {
+    display: block;
+    border: 0px solid black;
+  }
+
+  .divTableCell:first-child {
+    margin-top: 20px;
+    border-top: 2px dashed black;
+    padding: 10px;
+  }
+
+  .divTableHead {
+    display: none;
+  }
+
+  .hrClass {
+    border: 0px solid black;
+  }
+}
+
+
+/*
+<div class="divTable">
+  <div class="divTableHeading">
+    <div class="divTableRow">
+      <div class="divTableHead">Image</div>
+      <div class="divTableHead">Address</div>
+      <div class="divTableHead">Distance</div>
+    </div>
+  </div>
+  <div class="divTableBody">
+    <div class="divTableRow">
+      <div class="divTableCell">&nbsp;</div>
+      <div class="divTableCell">&nbsp;</div>
+      <div class="divTableCell">&nbsp;</div>
+    </div>
+    <div class="divTableRow">
+      <div class="divTableCell">&nbsp;</div>
+      <div class="divTableCell">&nbsp;</div>
+      <div class="divTableCell">&nbsp;</div>
+    </div>
+  </div>
+</div>
+*/
